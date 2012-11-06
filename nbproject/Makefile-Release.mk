@@ -35,9 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/PistolTarget.o \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/SlowTarget.o \
-	${OBJECTDIR}/FireBullet.o
+	${OBJECTDIR}/Uzi.o \
+	${OBJECTDIR}/Pistol.o
 
 
 # C Compiler Flags
@@ -64,20 +65,25 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/bulletz: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/bulletz ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/PistolTarget.o: PistolTarget.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/PistolTarget.o PistolTarget.cpp
+
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
-${OBJECTDIR}/SlowTarget.o: SlowTarget.cpp 
+${OBJECTDIR}/Uzi.o: Uzi.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/SlowTarget.o SlowTarget.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Uzi.o Uzi.cpp
 
-${OBJECTDIR}/FireBullet.o: FireBullet.cpp 
+${OBJECTDIR}/Pistol.o: Pistol.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/FireBullet.o FireBullet.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Pistol.o Pistol.cpp
 
 # Subprojects
 .build-subprojects:

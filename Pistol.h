@@ -1,30 +1,30 @@
 /* 
- * File:   FireBullet.h
+ * File:   Pistol.h
  * Author: Ben Aldrich
  *
  * Created on November 5, 2012, 11:19 AM
  */
 
-#ifndef FIREBULLET_H
-#define	FIREBULLET_H
+#ifndef PISTOL_H
+#define	PISTOL_H
 
 #include <czmq.h>
 #include <stdlib.h>
 #include <string>
 
-class FireBullet {
+class Pistol {
 public:
-   FireBullet();
+   Pistol();
    void Aim(std::string& location);
    void Fire(std::string& msg);
    bool TargetHit();
-   virtual ~FireBullet();
+   virtual ~Pistol();
 private:
    void *mGun;
-   zctx_t *ctx;
+   zctx_t *mCtx;
    int mHits;
 
 };
 
-#endif	/* FIREBULLET_H */
+#endif	/* PISTOL_H */
 

@@ -12,10 +12,12 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>FireBullet.cpp</itemPath>
-      <itemPath>FireBullet.h</itemPath>
-      <itemPath>SlowTarget.cpp</itemPath>
-      <itemPath>SlowTarget.h</itemPath>
+      <itemPath>Pistol.cpp</itemPath>
+      <itemPath>Pistol.h</itemPath>
+      <itemPath>PistolTarget.cpp</itemPath>
+      <itemPath>PistolTarget.h</itemPath>
+      <itemPath>Uzi.cpp</itemPath>
+      <itemPath>Uzi.h</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"

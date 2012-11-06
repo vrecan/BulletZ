@@ -6,24 +6,28 @@
  */
 
 #include <stdlib.h>
-#include "FireBullet.h"
-#include "SlowTarget.h"
+#include "Pistol.h"
+#include "Uzi.h"
+#include "PistolTarget.h"
 #include <string>
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-   FireBullet pistol;
-   SlowTarget target;
-   std::string location("tcp://127.0.0.1:5513");
+   Uzi Uzi;
+   PistolTarget target;
+   std::string location("ipc:///tmp/uzi.socket");
+   printf("Preparing Target\n");
    target.prepareForShot(location);
-   pistol.Aim(location);
+   printf("Aiming\n");
+   Uzi.Aim(location);
+   printf("shooting\n");
    while (true) {
       std::string msg = "woo!";
-      pistol.Fire(msg);
-      target.GetShot();
-      assert(pistol.TargetHit());
+      Uzi.Fire(msg);
+      char* shot = target.GetShot();
+      delete shot;
    }
    return 0;
 }
